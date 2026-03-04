@@ -10,6 +10,12 @@ This is a short conceptual note on **quasiparticle self-consistent GW (QSGW)**.
 - DFT gives a practical ground-state starting point, but quasiparticle energies (band gaps, band positions) can be inaccurate.
 - GW introduces a **self-energy** Σ that improves quasiparticle energies using many-body perturbation theory.
 - QSGW makes the *starting point itself* self-consistent by updating an effective one-particle Hamiltonian until the quasiparticle picture is stable.
+- Inline: $E = mc^2$
+
+Display:
+$$
+G = G_0 + G_0 \Sigma G
+$$
 
 ## A useful mental model
 Think of QSGW as *replacing the DFT exchange-correlation potential* with a better “effective” potential derived from Σ, then repeating until it no longer changes much.
