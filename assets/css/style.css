@@ -85,7 +85,7 @@ a:hover{text-decoration:underline}
   border:2px solid rgba(56,189,248,.35);
   background: rgba(148,163,184,.08);
 }
-
+.meta i{ width:22px; color:var(--accent); margin-right:6px; }
 .name{
   margin:14px 0 4px;
   font-size:1.75rem;
