@@ -1,9 +1,10 @@
-title: Selim Reza
-
 collections:
   notes:
     output: true
     permalink: /notes/:name/
+  news:
+    output: true
+    permalink: /news/:name/
 
 defaults:
   - scope:
@@ -11,6 +12,8 @@ defaults:
       type: notes
     values:
       layout: note
-  news:
-    output: true
-    permalink: /news/:name/
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: note
