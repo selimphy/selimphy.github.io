@@ -4,18 +4,14 @@ layout: none
 
 <!doctype html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Notes | Selim Reza</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,30 +20,98 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="wrap">
 
-{% include sidebar.html %}
+  {% include sidebar.html %}
 
-<main>
+  <main>
 
-<section class="card">
+    <section class="card">
+      <h1>Notes</h1>
+      <p class="small">Latest writing appears first. Use the left panel to browse by series.</p>
+    </section>
 
-<h1>Notes</h1>
+    {% assign latest = site.notes | sort: "date" | reverse %}
+    {% assign dft_series = site.notes | where_exp: "n", "n.tags contains 'DFT'" | sort: "date" | reverse %}
+    {% assign qsgw_series = site.notes | where_exp: "n", "n.tags contains 'QSGW'" | sort: "date" | reverse %}
 
-<p>
-This section contains my research notes, explanations, and ideas related to computational physics, DFT, QSGW, and other topics.
-</p>
+    <div class="grid">
 
-<ul>
+      <!-- LEFT: Series -->
+      <aside class="card side">
+        <h2 style="margin-bottom:10px;">Series</h2>
 
-<li><a href="qsgw-introduction.html">QSGW: Conceptual Introduction</a></li>
+        <p class="small" style="margin-top:0;">
+          <a href="#latest">Latest</a>
+        </p>
 
-<li><a href="dft-convergence.html">DFT Convergence Guide</a></li>
+        <p class="small"><strong>DFT Series</strong> ({{ dft_series | size }})<br>
+          <a href="#dft">View</a>
+        </p>
 
-</ul>
+        <p class="small"><strong>QSGW Series</strong> ({{ qsgw_series | size }})<br>
+          <a href="#qsgw">View</a>
+        </p>
 
-</section>
+        <p class="small"><strong>All topics</strong><br>
+          Scroll the latest list on the right.
+        </p>
+      </aside>
 
-</main>
+      <!-- RIGHT: Latest -->
+      <div>
 
+        <section class="card" id="latest">
+          <h2>Latest</h2>
+
+          {% for note in latest %}
+            <div class="post" style="margin-bottom:14px;">
+              <div class="small" style="margin-bottom:6px;">
+                {{ note.date | date: "%B %d, %Y" }}
+                {% if note.tags %} • {{ note.tags | join: " • " }}{% endif %}
+              </div>
+              <div style="font-weight:800; font-size:1.05rem;">
+                <a href="{{ note.url }}">{{ note.title }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+
+        <section class="card" id="dft">
+          <h2>DFT Series</h2>
+          {% if dft_series.size == 0 %}
+            <p class="small">No DFT notes yet.</p>
+          {% else %}
+            {% for note in dft_series %}
+              <div class="post" style="margin-bottom:12px;">
+                <div class="small">{{ note.date | date: "%B %d, %Y" }}</div>
+                <div style="font-weight:800;">
+                  <a href="{{ note.url }}">{{ note.title }}</a>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </section>
+
+        <section class="card" id="qsgw">
+          <h2>QSGW Series</h2>
+          {% if qsgw_series.size == 0 %}
+            <p class="small">No QSGW notes yet.</p>
+          {% else %}
+            {% for note in qsgw_series %}
+              <div class="post" style="margin-bottom:12px;">
+                <div class="small">{{ note.date | date: "%B %d, %Y" }}</div>
+                <div style="font-weight:800;">
+                  <a href="{{ note.url }}">{{ note.title }}</a>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
 </div>
 
 </body>
