@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,93 +16,15 @@
 
 <body>
 
-<!-- Top navigation -->
-<div class="topbar">
-  <div class="inner nav">
-    <a href="/">About</a>
-    <a href="/education/">Education</a>
-    <a href="/research/">Research</a>
-    <a href="/cv/">CV</a>
-    <a href="/notes/">Notes</a>
-  </div>
-</div>
+{% include nav.html %}
 
 <div class="wrap">
 
-  <!-- Left side -->
-  <aside class="sidebar">
+  {% include sidebar.html %}
 
-  <img class="avatar" src="/assets/images/profile.jpg" alt="Selim Reza">
-
-  <div class="name">Selim Reza</div>
-
-  <p class="oneLine">MSc Student at Kanazawa University,Ishikawa,Japan</p>
-
-
-  <!-- Contact -->
-  <div class="meta">
-    <div><strong>Contact</strong></div>
-
-    <div>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:selimreza929@gmail.com">selimreza929@gmail.com</a>
-    </div>
-  </div>
-
-
-  <!-- Social / Profiles -->
-  <div class="meta">
-
-    <div><strong>Profiles</strong></div>
-
-    <div>
-      <i class="fa-solid fa-graduation-cap"></i>
-      <a href="https://scholar.google.com/citations?user=sCUU60kAAAAJ&hl=en">Google Scholar</a>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-orcid"></i>
-      <a href="https://orcid.org/0000-0002-0620-1095">ORCID</a>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-github"></i>
-      <a href="https://github.com/selimphy">GitHub</a>
-    </div>
-
-    <div>
-      <i class="fa-solid fa-flask"></i>
-      <a href="https://www.researchgate.net/profile/Selim-Reza-8">ResearchGate</a>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-linkedin"></i>
-      <a href="https://www.linkedin.com/in/selimphy">LinkedIn</a>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-goodreads"></i>
-      <a href="https://www.goodreads.com/bookember">Goodreads</a>
-    </div>
-
-    <div>
-      <i class="fa-brands fa-facebook"></i>
-      <a href="https://facebook.com/SelimReza929">Facebook</a>
-    </div>
-
-  </div>
-
-
-  <!-- Footer -->
-  <div class="meta small">
-    © <span id="y"></span> Selim Reza
-  </div>
-
-</aside>
-  <!-- Right side -->
   <main>
 
-    <section id="about" class="card">
+    <section class="card">
       <h2>About</h2>
       <p>
         M.Sc. student in Computational Science at Kanazawa University. I work on first-principles
@@ -109,38 +35,9 @@
       </p>
     </section>
 
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Kanazawa University (Japan)</strong> — M.Sc. Computational Science (Oct 2023 – Sep 2025)</li>
-        <li><strong>University of Rajshahi (Bangladesh)</strong> — M.Sc. Physics (Mar 2021 – Dec 2022), CGPA 3.69/4.00</li>
-        <li><strong>University of Rajshahi (Bangladesh)</strong> — B.Sc. Physics (Feb 2016 – Mar 2021), CGPA 3.47/4.00</li>
-      </ul>
-    </section>
-
-    <section id="research" class="card">
-      <h2>Research</h2>
-      <ul>
-        <li>Phase transitions in zinc pyrovanadates</li>
-        <li>Electronic structure and optical properties from DFT and QSGW</li>
-        <li>Phonon calculations and workflow automation on HPC</li>
-      </ul>
-    </section>
-
-    <section id="cv" class="card">
-      <h2>CV</h2>
-      <p>
-        <a href="CV_Selim_Reza.pdf">Download my CV (PDF)</a>
-      </p>
-      <p class="small">Tip: upload your CV PDF into this repo with exactly the same filename above.</p>
-    </section>
-
   </main>
-</div>
 
-<script>
-document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+</div>
 
 </body>
 </html>
