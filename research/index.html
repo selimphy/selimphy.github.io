@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,82 +10,29 @@
 <title>Research | Selim Reza</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#0b1220;
-  --card:#111c33;
-  --accent:#38bdf8;
-  --text:#e2e8f0;
-}
-
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-
-.topbar{
-  background:#0f172a;
-  padding:15px;
-  text-align:center;
-}
-
-.topbar a{
-  color:var(--accent);
-  text-decoration:none;
-  margin:0 15px;
-  font-weight:600;
-}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:50px 20px;
-}
-
-.card{
-  background:var(--card);
-  padding:30px;
-  border-radius:16px;
-}
-
-h1{
-  color:var(--accent);
-}
-
-li{
-  margin:12px 0;
-}
-</style>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="topbar">
-    <a href="/">About</a>
-    <a href="/education/">Education</a>
-    <a href="/research/">Research</a>
-    <a href="/cv/">CV</a>
-    <a href="/notes/">Notes</a>
-</div>
+{% include nav.html %}
 
-<div class="container">
+<div class="wrap">
 
-<div class="card">
+  {% include sidebar.html %}
 
-<h1>Research</h1>
-
-<ul>
-<li>First-principles computational study of phase transitions in zinc pyrovanadate</li>
-<li>Electronic structure and optical property analysis using DFT and QSGW</li>
-<li>Phonon calculations using Phonopy</li>
-<li>High-performance computing workflows on Linux clusters</li>
-<li>Data analysis and visualization using Python (NumPy, Pandas, Matplotlib)</li>
-</ul>
-
-</div>
+  <main>
+    <section class="card">
+      <h1>Research</h1>
+      <ul>
+        <li>Phase transitions in zinc pyrovanadates</li>
+        <li>Electronic structure and optical properties from DFT and QSGW</li>
+        <li>Phonon calculations using Phonopy</li>
+        <li>HPC workflow development on Linux clusters</li>
+      </ul>
+    </section>
+  </main>
 
 </div>
 
