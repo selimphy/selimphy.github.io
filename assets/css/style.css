@@ -197,3 +197,12 @@ hr.thin{
   border-top:none;
   padding-top:0;
 }
+
+/* Smaller font for sidebar profile links */
+.sidebar .meta{
+  font-size:0.88rem;
+}
+
+.sidebar .meta a{
+  font-size:0.88rem;
+}
