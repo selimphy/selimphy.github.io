@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes | Selim Reza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#111c33;
+  --border:rgba(148,163,184,.22);
+  --accent:#38bdf8;
+  --text:#e2e8f0;
+  --muted:#94a3b8;
+  --shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.topbar{
+  background:#0f172a;
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.topbar a{
+  color:var(--accent);
+  text-decoration:none;
+  margin:0 14px;
+  font-weight:600;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:50px 20px;
+}
+.header{
+  margin-bottom:18px;
+}
+h1{
+  margin:0 0 8px;
+  color:var(--accent);
+}
+.subtitle{
+  margin:0;
+  color:var(--muted);
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  margin:14px 0;
+}
+.noteTitle{
+  margin:0 0 6px;
+  font-size:1.1rem;
+}
+.noteTitle a{
+  color:var(--text);
+  text-decoration:none;
+}
+.noteTitle a:hover{
+  text-decoration:underline;
+}
+.meta{
+  color:var(--muted);
+  font-size:.95rem;
+}
+.tag{
+  display:inline-block;
+  margin-right:8px;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  color:var(--accent);
+  background: rgba(56,189,248,.08);
+  font-weight:700;
+  font-size:.85rem;
+}
+.small{
+  color:var(--muted);
+  font-size:.95rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="index.html">About</a>
+  <a href="education.html">Education</a>
+  <a href="research.html">Research</a>
+  <a href="cv.html">CV</a>
+  <a href="notes.html">Notes</a>
+</div>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Notes</h1>
+    <p class="subtitle">Short write-ups: research ideas, physics intuition, and practical tips.</p>
+  </div>
+
+  <!-- Add new notes by copying one "card" and changing title/date/tags/link -->
+
+  <div class="card">
+    <div class="tag">Physics</div><div class="tag">Methods</div>
+    <h2 class="noteTitle"><a href="note-qsgw.html">Understanding QSGW intuitively</a></h2>
+    <div class="meta">March 2026 • 6 min read</div>
+    <p class="small">A plain-language mental model for QSGW and why it improves quasiparticle energies.</p>
+  </div>
+
+  <div class="card">
+    <div class="tag">DFT</div><div class="tag">Tips</div>
+    <h2 class="noteTitle"><a href="note-dft-convergence.html">DFT convergence checklist</a></h2>
+    <div class="meta">March 2026 • 5 min read</div>
+    <p class="small">A practical checklist for k-mesh, cutoff, smearing, and what to report in a paper.</p>
+  </div>
+
+  <div class="card">
+    <div class="tag">Life</div><div class="tag">Study</div>
+    <h2 class="noteTitle"><a href="note-research-routine.html">Building a research routine that actually works</a></h2>
+    <div class="meta">March 2026 • 4 min read</div>
+    <p class="small">Small habits that help consistency without burnout.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
