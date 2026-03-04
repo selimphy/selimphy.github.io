@@ -11,3 +11,6 @@ defaults:
       type: notes
     values:
       layout: note
+  news:
+    output: true
+    permalink: /news/:name/
