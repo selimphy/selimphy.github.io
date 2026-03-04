@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understanding QSGW intuitively | Selim Reza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#111c33;
+  --border:rgba(148,163,184,.22);
+  --accent:#38bdf8;
+  --text:#e2e8f0;
+  --muted:#94a3b8;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.topbar{
+  background:#0f172a;
+  padding:15px;
+  text-align:center;
+}
+
+.topbar a{
+  color:var(--accent);
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:600;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.article{
+  background:var(--card);
+  padding:30px;
+  border-radius:16px;
+}
+
+h1{
+  color:var(--accent);
+}
+
+.meta{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+p{
+  line-height:1.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<a href="index.html">About</a>
+<a href="education.html">Education</a>
+<a href="research.html">Research</a>
+<a href="cv.html">CV</a>
+<a href="notes.html">Notes</a>
+</div>
+
+<div class="container">
+
+<div class="article">
+
+<h1>Understanding QSGW intuitively</h1>
+
+<div class="meta">
+Physics Notes • March 2026
+</div>
+
+<p>
+Quasiparticle self-consistent GW (QSGW) is an advanced electronic structure method
+used to improve the description of quasiparticle energies beyond density functional
+theory (DFT).
+</p>
+
+<p>
+In standard GW calculations, the self-energy is constructed from the Green's function
+and screened Coulomb interaction. However, the starting point usually depends on
+a DFT calculation, which may introduce inaccuracies in the quasiparticle energies.
+</p>
+
+<p>
+QSGW improves this by iteratively constructing a new effective potential so that
+the quasiparticle energies become self-consistent. In simple terms, the method
+replaces the exchange-correlation potential of DFT with a more physically accurate
+self-energy derived from many-body perturbation theory.
+</p>
+
+<p>
+Because of this, QSGW often provides improved band gaps and electronic structures
+for many materials, especially correlated systems and semiconductors.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
