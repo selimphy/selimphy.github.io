@@ -1,113 +1,36 @@
+---
+layout: none
+---
 
 <!doctype html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Education | Selim Reza</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="topbar">
-  <div class="inner nav">
-    <a href="/">About</a>
-    <a href="/education/">Education</a>
-    <a href="/research/">Research</a>
-    <a href="/cv/">CV</a>
-    <a href="/notes/">Notes</a>
-  </div>
-</div>
-
+{% include nav.html %}
 
 <div class="wrap">
 
-  <!-- Sidebar (same as home page) -->
-  <aside class="sidebar">
+  {% include sidebar.html %}
 
-    <img class="avatar" src="/assets/images/profile.jpg" alt="Selim Reza">
-
-    <div class="name">Selim Reza</div>
-
-    <p class="oneLine">MSc Student at Kanazawa University, Japan</p>
-
-
-    <div class="meta">
-      <div><strong>Contact</strong></div>
-
-      <div>
-        <i class="fa-solid fa-envelope"></i>
-        <a href="mailto:selimreza929@gmail.com">selimreza929@gmail.com</a>
-      </div>
-    </div>
-
-
-    <div class="meta">
-
-      <div><strong>Profiles</strong></div>
-
-      <div><i class="fa-solid fa-graduation-cap"></i>
-      <a href="https://scholar.google.com/citations?user=sCUU60kAAAAJ&hl=en">Google Scholar</a></div>
-
-      <div><i class="fa-brands fa-orcid"></i>
-      <a href="https://orcid.org/0000-0002-0620-1095">ORCID</a></div>
-
-      <div><i class="fa-brands fa-github"></i>
-      <a href="https://github.com/selimphy">GitHub</a></div>
-
-      <div><i class="fa-solid fa-flask"></i>
-      <a href="https://www.researchgate.net/profile/Selim-Reza-8">ResearchGate</a></div>
-
-      <div><i class="fa-brands fa-linkedin"></i>
-      <a href="https://www.linkedin.com/in/selimphy">LinkedIn</a></div>
-
-      <div><i class="fa-brands fa-goodreads"></i>
-      <a href="https://www.goodreads.com/bookember">Goodreads</a></div>
-
-      <div><i class="fa-brands fa-facebook"></i>
-      <a href="https://facebook.com/SelimReza929">Facebook</a></div>
-
-    </div>
-
-  </aside>
-
-
-  <!-- Main content -->
   <main>
-
     <section class="card">
-
       <h1>Education</h1>
-
       <ul>
-
-      <li>
-      <strong>Kanazawa University, Japan</strong><br>
-      M.Sc. Computational Science (2023–2025)
-      </li>
-
-      <li>
-      <strong>University of Rajshahi, Bangladesh</strong><br>
-      M.Sc. Physics — CGPA: 3.69/4.00
-      </li>
-
-      <li>
-      <strong>University of Rajshahi, Bangladesh</strong><br>
-      B.Sc. Physics — CGPA: 3.47/4.00
-      </li>
-
+        <li><strong>Kanazawa University, Japan</strong><br> M.Sc. Computational Science (2023–2025)</li>
+        <li><strong>University of Rajshahi, Bangladesh</strong><br> M.Sc. Physics — CGPA: 3.69/4.00</li>
+        <li><strong>University of Rajshahi, Bangladesh</strong><br> B.Sc. Physics — CGPA: 3.47/4.00</li>
       </ul>
-
     </section>
-
   </main>
 
 </div>
