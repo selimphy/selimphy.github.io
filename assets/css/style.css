@@ -206,3 +206,7 @@ hr.thin{
 .sidebar .meta a{
   font-size:0.88rem;
 }
+
+.sidebar .meta div{
+  margin-bottom:6px;
+}
