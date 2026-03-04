@@ -6,10 +6,12 @@
   --accent:#38bdf8;
   --text:#e2e8f0;
   --muted:#94a3b8;
-  --shadow: 0 16px 40px rgba(0,0,0,.35);
+  --shadow:0 16px 40px rgba(0,0,0,.35);
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -19,6 +21,8 @@ body{
   line-height:1.65;
 }
 
+/* Links */
+
 a{
   color:var(--accent);
   text-decoration:none;
@@ -27,6 +31,8 @@ a{
 a:hover{
   text-decoration:underline;
 }
+
+/* Navigation bar */
 
 .topbar{
   background:#0f172a;
@@ -40,39 +46,56 @@ a:hover{
   font-weight:600;
 }
 
+/* Page container */
+
 .container{
   max-width:1100px;
   margin:auto;
-  padding:34px 18px 70px;
+  padding:40px 18px 70px;
 }
+
+/* Card sections */
 
 .card{
-  background:rgba(17,28,51,.72);
+  background:rgba(17,28,51,.75);
   border:1px solid var(--border);
   border-radius:16px;
-  padding:22px;
+  padding:24px;
+  margin-bottom:18px;
   box-shadow:var(--shadow);
-  margin-bottom:16px;
 }
 
+/* Headings */
+
 h1{
-  margin:0 0 10px;
+  margin:0 0 12px;
   color:var(--accent);
 }
 
 h2{
   margin:0 0 12px;
   color:var(--accent);
-  font-size:1.15rem;
+  font-size:1.2rem;
 }
+
+/* Text helpers */
 
 .small{
   color:var(--muted);
+  font-size:.95rem;
 }
+
+.meta{
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+/* Tags (used in Notes page) */
 
 .tag{
   display:inline-block;
   margin-right:8px;
+  margin-bottom:6px;
   padding:4px 10px;
   border-radius:999px;
   border:1px solid var(--border);
@@ -80,4 +103,45 @@ h2{
   background:rgba(56,189,248,.08);
   font-weight:700;
   font-size:.85rem;
+}
+
+/* Lists */
+
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin:8px 0;
+}
+
+/* Notes layout */
+
+.grid{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:16px;
+}
+
+.side{
+  position:sticky;
+  top:20px;
+}
+
+.post{
+  margin-bottom:16px;
+}
+
+/* Mobile */
+
+@media (max-width:900px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .side{
+    position:relative;
+  }
+
 }
