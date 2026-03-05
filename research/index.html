@@ -12,6 +12,77 @@ layout: none
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Page-only helpers (kept small & safe) */
+.hero{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(56,189,248,.08);
+  color:var(--accent);
+  font-weight:700;
+  font-size:.85rem;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+}
+.figure{
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(15,23,42,.55);
+}
+.figure img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  display:block;
+}
+.caption{
+  padding:10px 12px 12px;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.5;
+}
+.caption strong{color:var(--text); font-weight:800;}
+.split{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:16px;
+}
+.kv{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  background:rgba(15,23,42,.55);
+}
+.kv h3{
+  margin:0 0 8px;
+  color:var(--accent);
+  font-size:1.05rem;
+}
+.kv ul{margin:0; padding-left:18px;}
+.kv li{margin:6px 0;}
+@media (max-width: 900px){
+  .gallery{grid-template-columns:1fr;}
+  .figure img{height:220px;}
+  .split{grid-template-columns:1fr;}
+}
+</style>
 </head>
 
 <body class="page-inner">
@@ -23,15 +94,142 @@ layout: none
   {% include sidebar.html %}
 
   <main>
+
+    <!-- Overview -->
     <section class="card">
-      <h1>Research</h1>
-      <ul>
-        <li>Phase transitions in zinc pyrovanadates</li>
-        <li>Electronic structure and optical properties from DFT and QSGW</li>
-        <li>Phonon calculations using Phonopy</li>
-        <li>HPC workflow development on Linux clusters</li>
-      </ul>
+      <div class="hero">
+        <div style="flex:1 1 520px;">
+          <h1>Research</h1>
+          <p>
+            My research focuses on <strong>computational materials physics</strong>, where I use first-principles methods
+            to understand how structural changes (especially <strong>phase transitions</strong>) modify the
+            <strong>electronic structure</strong> and <strong>optical properties</strong> of functional oxide materials.
+            A major theme in my work is connecting atomic-scale structure (crystal symmetry, bonding, distortions)
+            to measurable properties such as band gaps, density of states, and optical spectra.
+          </p>
+          <p class="small">
+            Methods: DFT • GW/QSGW • phonons • structure–property relationships • HPC workflows
+          </p>
+
+          <div class="badges">
+            <span class="badge"><i class="fa-solid fa-atom"></i> Phase transitions</span>
+            <span class="badge"><i class="fa-solid fa-wave-square"></i> Electronic structure</span>
+            <span class="badge"><i class="fa-solid fa-eye"></i> Optical properties</span>
+            <span class="badge"><i class="fa-solid fa-server"></i> HPC automation</span>
+          </div>
+        </div>
+
+        <div class="kv" style="flex:1 1 260px;">
+          <h3>Current interests</h3>
+          <ul>
+            <li>Zn₂V₂O₇ / Cd₂V₂O₇ pyrovanadates</li>
+            <li>DFT → GW/QSGW accuracy</li>
+            <li>Structure–property mapping</li>
+            <li>Phonons and stability</li>
+          </ul>
+        </div>
+      </div>
     </section>
+
+    <!-- Research visuals -->
+    <section class="card">
+      <h2>Research snapshots</h2>
+      <hr class="thin">
+
+      <div class="gallery">
+
+        <div class="figure">
+          <img src="/assets/images/research/crystal-zn2v2o7.png" alt="Crystal structure snapshot (pyrovanadate)">
+          <div class="caption">
+            <strong>Crystal structure</strong><br>
+            Example structure view (e.g., Zn₂V₂O₇ polyhedra). Use a VESTA/Jmol screenshot.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="/assets/images/research/bands-dos.png" alt="Band structure and DOS plot">
+          <div class="caption">
+            <strong>Electronic structure</strong><br>
+            Band structure / DOS from DFT or QSGW to connect symmetry & phases to band features.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="/assets/images/research/workflow-hpc.png" alt="HPC workflow / automation figure">
+          <div class="caption">
+            <strong>Workflow</strong><br>
+            Reproducible pipelines: calculation → post-processing → plots (Python/gnuplot) on Linux/HPC.
+          </div>
+        </div>
+
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        Tip: put your images in <code>assets/images/research/</code> with the exact filenames used above.
+      </p>
+    </section>
+
+    <!-- Projects / themes -->
+    <section class="card">
+      <h2>Research themes</h2>
+      <hr class="thin">
+
+      <div class="split">
+
+        <div class="kv">
+          <h3>1) Phase transitions in oxide materials</h3>
+          <ul>
+            <li>Identify structural changes (symmetry, distortions, bonding) across phases.</li>
+            <li>Relate atomic rearrangements to electronic/optical signatures.</li>
+            <li>Use phonons and total energies to discuss stability and transitions.</li>
+          </ul>
+        </div>
+
+        <div class="kv">
+          <h3>2) DFT → GW/QSGW for electronic accuracy</h3>
+          <ul>
+            <li>Compare DFT and QSGW band structures and gaps.</li>
+            <li>Analyze orbital character (p–d coupling, hybridization, band ordering).</li>
+            <li>Use QSGW when DFT underestimates key quasiparticle features.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="split" style="margin-top:16px;">
+
+        <div class="kv">
+          <h3>3) Optical properties & spectra</h3>
+          <ul>
+            <li>Compute optical response and connect to band transitions and symmetry.</li>
+            <li>Interpret changes in spectra across phases/pressure/structure.</li>
+          </ul>
+        </div>
+
+        <div class="kv">
+          <h3>4) Tools & ecosystem</h3>
+          <ul>
+            <li>VASP, Ecalj (QSGW), Quantum ESPRESSO, Phonopy</li>
+            <li>Python (NumPy/Pandas/Matplotlib), gnuplot</li>
+            <li>VESTA/Jmol for structure visualization</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Link to CV / Publications -->
+    <section class="card">
+      <h2>Publications & details</h2>
+      <hr class="thin">
+      <p>
+        For publications, conference talks, and full details, please see the <a href="/cv/">CV</a> section.
+      </p>
+      <p class="small">
+        If you want, we can also add a “Selected Publications” mini-list here with DOI buttons.
+      </p>
+    </section>
+
   </main>
 
 </div>
