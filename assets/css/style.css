@@ -241,12 +241,16 @@ hr.thin{
 .sidebar .meta div{
   margin-bottom:6px;
 }
-/* Mobile: hide sidebar, show content full width */
-@media (max-width: 900px){
-  .sidebar{
-    display:none;
-  }
   .wrap{
     grid-template-columns: 1fr;  /* main takes full width */
   }
+}
+/* Mobile: show sidebar ONLY on About page */
+@media (max-width: 900px){
+
+  /* Default for inner pages: hide sidebar and use full width */
+  body.page-inner .sidebar{ display:none; }
+  body.page-inner .wrap{ grid-template-columns: 1fr; }
+
+  /* About page keeps sidebar visible (no change needed) */
 }
