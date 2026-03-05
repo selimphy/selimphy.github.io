@@ -4,18 +4,14 @@ layout: none
 
 <!doctype html>
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>CV | Selim Reza</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="page-inner">
@@ -24,25 +20,160 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="wrap">
 
-{% include sidebar.html %}
+  {% include sidebar.html %}
 
-<main>
+  <main>
 
-<section class="card">
+    <section class="card">
+      <h1>Curriculum Vitae</h1>
+      <p class="small">
+        <i class="fa-solid fa-phone"></i> (+81) 9028323858 &nbsp; • &nbsp;
+        <i class="fa-solid fa-envelope"></i> <a href="mailto:selimreza929@gmail.com">selimreza929@gmail.com</a>
+      </p>
 
-<h1>Curriculum Vitae</h1>
+      <p style="margin-top:10px;">
+        <a href="/cv/CV_Selim_Reza.pdf"><i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)</a>
+      </p>
+    </section>
 
-<p>
-You can download my full CV here:
-</p>
+    <section class="card">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Kanazawa University</strong>, Kanazawa, Ishikawa, Japan<br>
+          M.Sc. in Computational Science <span class="small">(Oct 2023 – Sep 2025)</span><br>
+          Advisor: Prof. Tatsuki Oda, PhD<br>
+          Thesis: “First-principles computational study on electronic structures and optical properties in the zinc pyrovanadates”
+        </li>
+        <li>
+          <strong>University of Rajshahi</strong>, Rajshahi, Bangladesh<br>
+          M.Sc. in Physics, CGPA: 3.69/4.00 <span class="small">(Mar 2021 – Dec 2022)</span><br>
+          Advisor: Prof. Md. Saiful Islam, PhD<br>
+          Thesis: “Computational Study of Zn₂V₂O₇ and Cd₂V₂O₇ for Energy Applications in Rechargeable Batteries”
+        </li>
+        <li>
+          <strong>University of Rajshahi</strong>, Rajshahi, Bangladesh<br>
+          B.Sc. in Physics, CGPA: 3.47/4.00 <span class="small">(Feb 2016 – Mar 2021)</span>
+        </li>
+      </ul>
+    </section>
 
-<p>
-<a href="/cv/CV_Selim_Reza.pdf">Download CV (PDF)</a>
-</p>
+    <section class="card">
+      <h2>Research Experience</h2>
+      <ul>
+        <li>
+          <strong>Kanazawa University</strong>, Kanazawa, Japan — Theoretical and Computational Nanoscience Lab
+          <span class="small">(2023 – 2025)</span><br>
+          • First-principles investigations of phase transitions in zinc pyrovanadate<br>
+          • DFT and QSGW using Ecalj; Quantum ESPRESSO and Phonopy for electronic/optical/phonon properties<br>
+          • Linux/HPC workflows and data visualization using Python (NumPy, Pandas, Matplotlib), VESTA, and Gnuplot
+        </li>
+        <li>
+          <strong>University of Rajshahi</strong>, Rajshahi, Bangladesh — Materials Science Lab
+          <span class="small">(2021 – 2023)</span><br>
+          • First-principles studies of Zn₂V₂O₇ and Cd₂V₂O₇ pyrovanadates<br>
+          • DFT using Materials Studio (CASTEP)<br>
+          • Visualization and plotting using VESTA and OriginPro
+        </li>
+      </ul>
+    </section>
 
-</section>
+    <section class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>
+          <strong>Simulation software:</strong><br>
+          • VASP (relaxation, energy calculations, band structure, DOS; pre/post-processing with VASPKIT)<br>
+          • Ecalj (house code), Quantum ESPRESSO, Phonopy, Materials Studio
+        </li>
+        <li>
+          <strong>Numerical analysis & visualization:</strong> NumPy, Pandas, Matplotlib, VESTA, Gnuplot, Origin
+        </li>
+        <li>
+          <strong>Writing & editing:</strong> MS Office, LaTeX (Overleaf), Vim
+        </li>
+      </ul>
+    </section>
 
-</main>
+    <section class="card">
+      <h2>Languages</h2>
+      <ul>
+        <li><strong>English:</strong> IELTS 6.5 (L: 8, S: 6.5, R: 6, W: 6); TOEIC 765</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Scholarships & Awards</h2>
+      <ul>
+        <li><strong>MEXT Scholarship for Master’s Degree</strong> <span class="small">(2023 – 2025)</span> — Japanese Government Scholarship (Monbukagakusho)</li>
+        <li><strong>National Science and Technology (NST) Fellowship</strong> <span class="small">(2021 – 2022)</span> — Ministry of Science and Technology, Bangladesh</li>
+        <li><strong>Accomplished Competitor</strong> <span class="small">(2017)</span> — International University Physics Competition</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Certifications</h2>
+      <ol>
+        <li>TOMIDAI Global Scifrontiers — Interdisciplinary Summer School (CITIR), University of Toyama, Japan</li>
+        <li>Density Functional Theory — École Polytechnique (Coursera)</li>
+        <li>Programming for Everybody (Getting Started with Python) — Georgia Institute of Technology (Coursera)</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Seminars & Conferences</h2>
+      <ol>
+        <li>
+          “First-principles computational study on electronic structures in Zn₂V₂O₇ using quasi-particle self-consistent GW method”<br>
+          <span class="small">International Symposium on Computational Science, Kanazawa University, Japan (2025)</span>
+        </li>
+        <li>
+          “Study of the thortveitite structure of zinc pyrovanadate (Zn₂V₂O₇) under pressure”<br>
+          <span class="small">National Conference on Physics, Bangladesh Physical Society, Bangladesh (2023)</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Publications</h2>
+      <ol>
+        <li>
+          S. Reza, M. Maaza, and S. Islam, “A computational study of the thortveitite structure of zinc pyrovanadate, Zn₂V₂O₇, under pressure”,
+          <em>RSC Advances</em>, 2023, 13, 17212–17221.
+        </li>
+        <li>
+          M.N. Jahid, S. Reza, M. Maaza, and M.S. Islam, “Pressure effects of the thortveitite structure of cadmium pyrovanadate Cd₂V₂O₇”,
+          <em>Journal of Solid State Chemistry</em>, 2025, 343, 125162.
+        </li>
+        <li>
+          A. Rahman, S. Reza, M. N. Jahid, M. A. R. Sarker, Y. Inagaki, T. Kawae, M. Maaza, and S. Islam,
+          “Comprehensive approach on La₁−xPbxMnO₃ (0.2 ≤ x ≤ 0.5) perovskites synthesized by solid state reaction technique”,
+          <em>Journal of Alloys and Compounds</em>, 2025, 1010, 177373.
+        </li>
+      </ol>
+      <p class="small" style="margin-top:10px;">
+        Tip: you can later add DOI links to each publication line.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Recommendations</h2>
+      <ol>
+        <li>
+          <strong>Prof. Tatsuki Oda</strong><br>
+          Division of Mathematical and Physical Science, Graduate School of Natural Science and Technology<br>
+          Kanazawa University, Japan<br>
+          Email: <a href="mailto:oda@cphys.s.kanazawa-u.ac.jp">oda@cphys.s.kanazawa-u.ac.jp</a>
+        </li>
+        <li>
+          <strong>Prof. Md. Saiful Islam</strong><br>
+          Department of Physics, University of Rajshahi, Bangladesh<br>
+          Email: <a href="mailto:sislamphy@ru.ac.bd">sislamphy@ru.ac.bd</a>
+        </li>
+      </ol>
+    </section>
+
+  </main>
 
 </div>
 
