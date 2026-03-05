@@ -27,7 +27,10 @@ body{
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* Top nav */
+/* =========================
+   TOP NAV
+========================= */
+
 .topbar{
   position:sticky;
   top:0;
@@ -46,7 +49,7 @@ a:hover{text-decoration:underline}
   align-items:center;
 }
 
-/* nav sits ONLY above the right content column on desktop */
+/* nav sits above right column on desktop */
 .topbar .nav{
   grid-column:2;
   display:flex;
@@ -68,7 +71,10 @@ a:hover{text-decoration:underline}
   background: rgba(148,163,184,.10);
 }
 
-/* Layout: left sidebar + right content */
+/* =========================
+   LAYOUT
+========================= */
+
 .wrap{
   max-width:1100px;
   margin:0 auto;
@@ -78,7 +84,10 @@ a:hover{text-decoration:underline}
   gap:22px;
 }
 
-/* Sidebar card */
+/* =========================
+   SIDEBAR
+========================= */
+
 .sidebar{
   position:sticky;
   top:74px;
@@ -112,12 +121,13 @@ a:hover{text-decoration:underline}
   font-weight:500;
 }
 
+/* Sidebar meta (Contact / Profiles) */
 .meta{
   margin-top:14px;
   padding-top:14px;
   border-top:1px solid var(--border);
   color:var(--muted);
-  font-size:.88rem; /* smaller profiles/contact */
+  font-size:.88rem; /* smaller for profile list */
 }
 
 .meta i{
@@ -130,7 +140,10 @@ a:hover{text-decoration:underline}
   margin-bottom:6px;
 }
 
-/* Main content cards */
+/* =========================
+   CARDS
+========================= */
+
 .card{
   background: rgba(17,28,51,.72);
   border:1px solid var(--border);
@@ -153,7 +166,10 @@ a:hover{text-decoration:underline}
 
 .small{color:var(--muted); font-size:.95rem}
 
-/* Notes typography */
+/* =========================
+   NOTES TYPOGRAPHY
+========================= */
+
 .note-body{ font-size:1.02rem; }
 .note-body h2{ margin-top:18px; }
 .note-body code{
@@ -186,14 +202,15 @@ hr.thin{
   padding-top:0;
 }
 
-/* MOBILE RULES
-   Goal:
-   - About page: sidebar visible but compact
+/* =========================
+   MOBILE BEHAVIOR
+   - About page: sidebar visible (clean vertical layout)
    - Inner pages: sidebar hidden
-*/
+========================= */
+
 @media (max-width: 900px){
 
-  /* Make top nav usable on mobile */
+  /* Top nav: one row, scrollable */
   .topbar .inner{ grid-template-columns:1fr; }
   .topbar .nav{
     grid-column:1;
@@ -202,42 +219,56 @@ hr.thin{
     padding-bottom:2px;
   }
 
-  /* Inner pages: hide sidebar */
+  /* INNER pages: hide sidebar */
   body.page-inner .sidebar{ display:none; }
   body.page-inner .wrap{ grid-template-columns:1fr; }
 
-  /* About page: keep sidebar but prevent overlap + make compact */
+  /* ABOUT page: show sidebar, but make it mobile-friendly */
   body.page-about .wrap{ grid-template-columns:1fr; }
 
   body.page-about .sidebar{
-    position:relative;  /* remove sticky to avoid overlap */
+    position:relative;   /* remove sticky to avoid overlap */
     top:auto;
-    display:flex;
-    gap:12px;
-    align-items:center;
+    display:block;
     padding:14px;
   }
 
   body.page-about .avatar{
-    width:84px;
-    height:84px;
+    width:110px;
+    height:110px;
     aspect-ratio:auto;
-    border-radius:14px;
-    flex:0 0 auto;
+    border-radius:16px;
+    display:block;
+    margin:0 auto 10px;
   }
 
   body.page-about .name{
-    font-size:1.25rem;
-    margin:0;
+    font-size:1.35rem;
+    text-align:center;
+    margin:8px 0 2px;
   }
 
   body.page-about .oneLine{
-    margin:2px 0 0;
+    text-align:center;
+    margin:0 0 6px;
   }
 
-  body.page-about .meta{
-    margin-top:10px;
-    padding-top:10px;
-    font-size:.9rem;
+  /* Profiles (2nd meta block) in 2 columns to look neat */
+  body.page-about .meta:nth-of-type(2){
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 14px;
+  }
+
+  /* "Profiles" title spans both columns */
+  body.page-about .meta:nth-of-type(2) > div:first-child{
+    grid-column:1 / -1;
+    margin-bottom:2px;
+  }
+
+  /* Each profile row aligns icon + text */
+  body.page-about .meta:nth-of-type(2) div{
+    display:flex;
+    align-items:center;
   }
 }
