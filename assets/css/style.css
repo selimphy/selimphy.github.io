@@ -241,3 +241,12 @@ hr.thin{
 .sidebar .meta div{
   margin-bottom:6px;
 }
+/* Mobile: hide sidebar, show content full width */
+@media (max-width: 900px){
+  .sidebar{
+    display:none;
+  }
+  .wrap{
+    grid-template-columns: 1fr;  /* main takes full width */
+  }
+}
