@@ -35,9 +35,10 @@ layout: none
   font-size:.85rem;
 }
 
+/* 2-image gallery */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(2, 1fr);
   gap:14px;
 }
 .figure{
@@ -48,7 +49,7 @@ layout: none
 }
 .figure img{
   width:100%;
-  height:210px;
+  height:230px;
   object-fit:cover;
   display:block;
 }
@@ -59,6 +60,7 @@ layout: none
   line-height:1.5;
 }
 .caption strong{color:var(--text); font-weight:800;}
+
 .split{
   display:grid;
   grid-template-columns:1.2fr .8fr;
@@ -77,6 +79,7 @@ layout: none
 }
 .kv ul{margin:0; padding-left:18px;}
 .kv li{margin:6px 0;}
+
 @media (max-width: 900px){
   .gallery{grid-template-columns:1fr;}
   .figure img{height:220px;}
@@ -139,33 +142,25 @@ layout: none
       <div class="gallery">
 
         <div class="figure">
-          <img src="/assets/images/research/crystal-zn2v2o7.png" alt="Crystal structure snapshot (pyrovanadate)">
+          <img src="/assets/images/research/crystal-zn2v2o7.png" alt="Crystal structure (Zn2V2O7)">
           <div class="caption">
             <strong>Crystal structure</strong><br>
-            Example structure view (e.g., Zn₂V₂O₇ polyhedra). Use a VESTA/Jmol screenshot.
+            Atomic-scale structure view (unit cell / polyhedra). I use structure analysis to connect symmetry changes to physical properties.
           </div>
         </div>
 
         <div class="figure">
-          <img src="/assets/images/research/bands-dos.png" alt="Band structure and DOS plot">
-          <div class="caption">
-            <strong>Electronic structure</strong><br>
-            Band structure / DOS from DFT or QSGW to connect symmetry & phases to band features.
-          </div>
-        </div>
-
-        <div class="figure">
-          <img src="/assets/images/research/workflow-hpc.png" alt="HPC workflow / automation figure">
+          <img src="/assets/images/research/workflow-hpc.png" alt="DFT-QSGW-Phonons workflow">
           <div class="caption">
             <strong>Workflow</strong><br>
-            Reproducible pipelines: calculation → post-processing → plots (Python/gnuplot) on Linux/HPC.
+            Reproducible pipeline: structure → DFT → QSGW → phonons → plots & analysis (Python/gnuplot) on Linux/HPC.
           </div>
         </div>
 
       </div>
 
       <p class="small" style="margin-top:12px;">
-        Tip: put your images in <code>assets/images/research/</code> with the exact filenames used above.
+        Images are stored in <code>assets/images/research/</code>.
       </p>
     </section>
 
@@ -181,14 +176,14 @@ layout: none
           <ul>
             <li>Identify structural changes (symmetry, distortions, bonding) across phases.</li>
             <li>Relate atomic rearrangements to electronic/optical signatures.</li>
-            <li>Use phonons and total energies to discuss stability and transitions.</li>
+            <li>Use phonons and total energies to discuss stability and transition mechanisms.</li>
           </ul>
         </div>
 
         <div class="kv">
           <h3>2) DFT → GW/QSGW for electronic accuracy</h3>
           <ul>
-            <li>Compare DFT and QSGW band structures and gaps.</li>
+            <li>Compare DFT and QSGW band structures and band gaps.</li>
             <li>Analyze orbital character (p–d coupling, hybridization, band ordering).</li>
             <li>Use QSGW when DFT underestimates key quasiparticle features.</li>
           </ul>
@@ -201,8 +196,8 @@ layout: none
         <div class="kv">
           <h3>3) Optical properties & spectra</h3>
           <ul>
-            <li>Compute optical response and connect to band transitions and symmetry.</li>
-            <li>Interpret changes in spectra across phases/pressure/structure.</li>
+            <li>Compute optical response and connect it to band transitions and symmetry.</li>
+            <li>Interpret spectral changes across phase/pressure/structure variations.</li>
           </ul>
         </div>
 
@@ -226,7 +221,7 @@ layout: none
         For publications, conference talks, and full details, please see the <a href="/cv/">CV</a> section.
       </p>
       <p class="small">
-        If you want, we can also add a “Selected Publications” mini-list here with DOI buttons.
+        If you want, we can add a small “Selected Publications” list here with DOI buttons.
       </p>
     </section>
 
