@@ -16,9 +16,10 @@ body{
   margin:0;
   font-family:Inter, system-ui, sans-serif;
   font-size:16px;
-  background:radial-gradient(1200px 800px at 20% 0%, rgba(56,189,248,.12), transparent 60%),
-             radial-gradient(900px 700px at 90% 10%, rgba(99,102,241,.10), transparent 55%),
-             var(--bg);
+  background:
+    radial-gradient(1200px 800px at 20% 0%, rgba(56,189,248,.12), transparent 60%),
+    radial-gradient(900px 700px at 90% 10%, rgba(99,102,241,.10), transparent 55%),
+    var(--bg);
   color:var(--text);
   line-height:1.65;
 }
@@ -39,28 +40,27 @@ a:hover{text-decoration:underline}
 .topbar .inner{
   max-width:1100px;
   margin:0 auto;
-  padding:10px 18px;                 /* smaller height */
+  padding:10px 18px;
   display:grid;
-  grid-template-columns:320px 1fr;    /* left sidebar + right content */
+  grid-template-columns:320px 1fr;
   align-items:center;
 }
 
-/* nav sits ONLY above the right content column */
+/* nav sits ONLY above the right content column on desktop */
 .topbar .nav{
   grid-column:2;
   display:flex;
   justify-content:center;
   gap:18px;
-  flex-wrap:nowrap;                   /* prevent stacking */
+  flex-wrap:nowrap;
 }
 
 .topbar .nav a{
   color:var(--muted);
-  text-decoration:none;
   font-weight:600;
   padding:8px 10px;
   border-radius:10px;
-  white-space:nowrap;                 /* keep each item on one line */
+  white-space:nowrap;
 }
 
 .topbar .nav a:hover{
@@ -98,7 +98,7 @@ a:hover{text-decoration:underline}
   border:2px solid rgba(56,189,248,.35);
   background: rgba(148,163,184,.08);
 }
-.meta i{ width:22px; color:var(--accent); margin-right:6px; }
+
 .name{
   margin:14px 0 4px;
   font-size:1.75rem;
@@ -117,7 +117,17 @@ a:hover{text-decoration:underline}
   padding-top:14px;
   border-top:1px solid var(--border);
   color:var(--muted);
-  font-size:.95rem;
+  font-size:.88rem; /* smaller profiles/contact */
+}
+
+.meta i{
+  width:22px;
+  color:var(--accent);
+  margin-right:6px;
+}
+
+.sidebar .meta div{
+  margin-bottom:6px;
 }
 
 /* Main content cards */
@@ -129,51 +139,28 @@ a:hover{text-decoration:underline}
   box-shadow: var(--shadow);
   margin-bottom:16px;
 }
-.card h2{
+
+.card h1, .card h2{
   margin:0 0 12px;
   color:var(--accent);
-  font-size:1.2rem;
   letter-spacing:.2px;
 }
-.card p{margin:0 0 10px}
+.card h2{font-size:1.2rem}
+
+.card p{margin:0 0 10px; line-height:1.75}
 .card ul{margin:0; padding-left:18px}
 .card li{margin:8px 0}
-.card p{
-  line-height:1.75;
-}
 
 .small{color:var(--muted); font-size:.95rem}
 
-/* Mobile */
-@media (max-width: 900px){
-  .wrap{grid-template-columns:1fr;}
-  .sidebar{position:relative; top:auto;}
-
-  .topbar .inner{
-    grid-template-columns:1fr;
-  }
-
-  .topbar .nav{
-    grid-column:1;
-    justify-content:flex-start;
-    overflow-x:auto;                  /* scroll instead of stacking */
-    padding-bottom:2px;
-  }
-}
-.note-body{
-  font-size:1.02rem;
-}
-
-.note-body h2{
-  margin-top:18px;
-}
-
+/* Notes typography */
+.note-body{ font-size:1.02rem; }
+.note-body h2{ margin-top:18px; }
 .note-body code{
   background: rgba(148,163,184,.10);
   padding:2px 6px;
   border-radius:8px;
 }
-
 .note-body pre{
   background: rgba(15,23,42,.75);
   border:1px solid var(--border);
@@ -181,6 +168,8 @@ a:hover{text-decoration:underline}
   border-radius:14px;
   overflow:auto;
 }
+
+/* About/News helpers */
 hr.thin{
   border:none;
   border-top:1px solid var(--border);
@@ -192,65 +181,63 @@ hr.thin{
   padding:12px 0;
   border-top:1px solid var(--border);
 }
-
 .news .newsItem:first-child{
   border-top:none;
   padding-top:0;
 }
 
-/* Smaller font for sidebar profile links */
-.sidebar .meta{
-  font-size:0.88rem;
-}
-
-.sidebar .meta a{
-  font-size:0.88rem;
-}
-
-/* Mobile: make sidebar compact */
+/* MOBILE RULES
+   Goal:
+   - About page: sidebar visible but compact
+   - Inner pages: sidebar hidden
+*/
 @media (max-width: 900px){
 
-  .sidebar{
+  /* Make top nav usable on mobile */
+  .topbar .inner{ grid-template-columns:1fr; }
+  .topbar .nav{
+    grid-column:1;
+    justify-content:flex-start;
+    overflow-x:auto;
+    padding-bottom:2px;
+  }
+
+  /* Inner pages: hide sidebar */
+  body.page-inner .sidebar{ display:none; }
+  body.page-inner .wrap{ grid-template-columns:1fr; }
+
+  /* About page: keep sidebar but prevent overlap + make compact */
+  body.page-about .wrap{ grid-template-columns:1fr; }
+
+  body.page-about .sidebar{
+    position:relative;  /* remove sticky to avoid overlap */
+    top:auto;
+    display:flex;
+    gap:12px;
+    align-items:center;
     padding:14px;
   }
 
-  .avatar{
-    width:96px;
-    height:96px;
-    border-radius:14px;
+  body.page-about .avatar{
+    width:84px;
+    height:84px;
     aspect-ratio:auto;
-    display:block;
-    margin:0 auto 10px;
+    border-radius:14px;
+    flex:0 0 auto;
   }
 
-  .name{
-    font-size:1.35rem;
-    text-align:center;
+  body.page-about .name{
+    font-size:1.25rem;
+    margin:0;
   }
 
-  .oneLine{
-    text-align:center;
-    margin-bottom:8px;
+  body.page-about .oneLine{
+    margin:2px 0 0;
   }
 
-  /* Keep only first meta (Contact) visible by default */
-  .sidebar .meta:nth-of-type(2){
-    display:none; /* hides Profiles block on mobile */
+  body.page-about .meta{
+    margin-top:10px;
+    padding-top:10px;
+    font-size:.9rem;
   }
-}
-.sidebar .meta div{
-  margin-bottom:6px;
-}
-  .wrap{
-    grid-template-columns: 1fr;  /* main takes full width */
-  }
-}
-/* Mobile: show sidebar ONLY on About page */
-@media (max-width: 900px){
-
-  /* Default for inner pages: hide sidebar and use full width */
-  body.page-inner .sidebar{ display:none; }
-  body.page-inner .wrap{ grid-template-columns: 1fr; }
-
-  /* About page keeps sidebar visible (no change needed) */
 }
