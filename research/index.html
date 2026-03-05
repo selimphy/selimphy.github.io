@@ -61,11 +61,6 @@ layout: none
 }
 .caption strong{color:var(--text); font-weight:800;}
 
-.split{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:16px;
-}
 .kv{
   border:1px solid var(--border);
   border-radius:14px;
@@ -80,10 +75,30 @@ layout: none
 .kv ul{margin:0; padding-left:18px;}
 .kv li{margin:6px 0;}
 
+.publist{
+  margin:0;
+  padding-left:18px;
+  line-height:1.85;
+}
+.publist li{ margin:10px 0; }
+.doi{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:6px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(148,163,184,.08);
+  color:var(--accent);
+  font-weight:700;
+  font-size:.88rem;
+}
+.doi:hover{ background:rgba(56,189,248,.10); text-decoration:none; }
+
 @media (max-width: 900px){
   .gallery{grid-template-columns:1fr;}
   .figure img{height:220px;}
-  .split{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -164,72 +179,38 @@ layout: none
       </p>
     </section>
 
-    <!-- Projects / themes -->
+    <!-- Publications -->
     <section class="card">
-      <h2>Research themes</h2>
+      <h2>Publications</h2>
       <hr class="thin">
 
-      <div class="split">
+      <ol class="publist">
 
-        <div class="kv">
-          <h3>1) Phase transitions in oxide materials</h3>
-          <ul>
-            <li>Identify structural changes (symmetry, distortions, bonding) across phases.</li>
-            <li>Relate atomic rearrangements to electronic/optical signatures.</li>
-            <li>Use phonons and total energies to discuss stability and transition mechanisms.</li>
-          </ul>
-        </div>
-
-        <div class="kv">
-          <h3>2) DFT → GW/QSGW for electronic accuracy</h3>
-          <ul>
-            <li>Compare DFT and QSGW band structures and band gaps.</li>
-            <li>Analyze orbital character (p–d coupling, hybridization, band ordering).</li>
-            <li>Use QSGW when DFT underestimates key quasiparticle features.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="split" style="margin-top:16px;">
-
-        <div class="kv">
-          <h3>3) Optical properties & spectra</h3>
-          <ul>
-            <li>Compute optical response and connect it to band transitions and symmetry.</li>
-            <li>Interpret spectral changes across phase/pressure/structure variations.</li>
-          </ul>
-        </div>
-
-        <div class="kv">
-          <h3>4) Tools & ecosystem</h3>
-          <ul>
-            <li>VASP, Ecalj (QSGW), Quantum ESPRESSO, Phonopy</li>
-            <li>Python (NumPy/Pandas/Matplotlib), gnuplot</li>
-            <li>VESTA/Jmol for structure visualization</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Selected Publications -->
-    <section class="card">
-      <h2>Selected Publications</h2>
-      <hr class="thin">
-
-      <ul style="line-height:1.8; margin:0; padding-left:18px;">
         <li>
-          <strong>A computational study of the thortveitite structure of zinc pyrovanadate, Zn₂V₂O₇, under pressure</strong><br>
-          <em>RSC Advances</em>, 2023<br>
-          <a href="https://doi.org/10.1039/D3RA02426A" target="_blank">
-            <i class="fa-solid fa-link"></i> https://doi.org/10.1039/D3RA02426A
+          <strong>RSC Advances (2023)</strong> — Zn₂V₂O₇ under pressure<br>
+          <a class="doi" href="https://doi.org/10.1039/D3RA02426A" target="_blank">
+            <i class="fa-solid fa-link"></i> 10.1039/D3RA02426A
           </a>
         </li>
-      </ul>
+
+        <li>
+          <strong>Journal of Solid State Chemistry (2025)</strong> — Cd₂V₂O₇ pressure effects<br>
+          <a class="doi" href="https://doi.org/10.1016/j.jssc.2024.125162" target="_blank">
+            <i class="fa-solid fa-link"></i> 10.1016/j.jssc.2024.125162
+          </a>
+        </li>
+
+        <li>
+          <strong>Journal of Alloys and Compounds (2025)</strong> — La₁−xPbxMnO₃ perovskites<br>
+          <a class="doi" href="https://doi.org/10.1016/j.jallcom.2024.177373" target="_blank">
+            <i class="fa-solid fa-link"></i> 10.1016/j.jallcom.2024.177373
+          </a>
+        </li>
+
+      </ol>
 
       <p class="small" style="margin-top:12px;">
-        See the <a href="/cv/">CV section</a> for the complete list of publications.
+        Full details are available in the <a href="/cv/">CV</a> page.
       </p>
     </section>
 
