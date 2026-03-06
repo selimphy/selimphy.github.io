@@ -12,6 +12,64 @@ layout: none
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.home-intro{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:16px;
+}
+.home-box{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  background:rgba(15,23,42,.45);
+}
+.home-box h3{
+  margin:0 0 10px;
+  color:var(--accent);
+  font-size:1.05rem;
+}
+.quick-list{
+  margin:0;
+  padding-left:18px;
+}
+.quick-list li{
+  margin:8px 0;
+}
+.newsItem{
+  padding:14px 0;
+  border-top:1px solid var(--border);
+}
+.newsItem:first-child{
+  border-top:none;
+  padding-top:0;
+}
+.newsTitle{
+  font-weight:800;
+  margin-top:4px;
+}
+.newsSummary{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:.96rem;
+  line-height:1.65;
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.section-head .small{
+  margin:0;
+}
+@media (max-width: 900px){
+  .home-intro{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body class="page-about">
@@ -25,43 +83,76 @@ layout: none
   <main>
 
     <section class="card">
-  <h2>About Me</h2>
-  <hr class="thin">
+      <div class="section-head">
+        <h2>About Me</h2>
+      </div>
+      <hr class="thin">
 
-  <p>
-    I am an M.Sc. student in Computational Science at Kanazawa University (Japan), working in the Theoretical and Computational Nanoscience Lab.
-    My research focuses on first-principles studies of phase transitions and the electronic/optical properties of oxide materials, with particular interest in zinc pyrovanadates.
-    I use DFT and QSGW (Ecalj), along with tools such as Quantum ESPRESSO and Phonopy, and I build Linux/HPC workflows for simulation and analysis.
-  </p>
+      <p>
+        I am a researcher in <strong>computational materials physics</strong> with academic training in physics
+        and computational science. My work focuses on using <strong>first-principles methods</strong> to study
+        how crystal structure, symmetry, and phase transitions influence the electronic and optical properties
+        of functional materials.
+      </p>
 
-  <p class="small">
-    Tools: VASP • Ecalj • Quantum ESPRESSO • Phonopy • Python (NumPy/Pandas/Matplotlib) • Linux/HPC
-  </p>
-</section>
+      <p>
+        I am currently pursuing my <strong>M.Sc. in Computational Science at Kanazawa University, Japan</strong>,
+        where I work in the <strong>Theoretical and Computational Nanoscience Lab</strong>. My present research
+        centers on zinc pyrovanadates and related oxide materials, with particular interest in
+        <strong>DFT</strong>, <strong>QSGW</strong>, phonons, and structure–property relationships.
+      </p>
 
-<section class="card">
-  <h2>News</h2>
-  <hr class="thin">
+      <div class="home-intro" style="margin-top:16px;">
 
-  {% assign items = site.news | sort: "date" | reverse %}
-  {% if items.size == 0 %}
-    <p class="small">No news yet. (You can add items by creating files in <code>_news/</code>.)</p>
-  {% else %}
-    <div class="news">
-      {% for n in items limit:5 %}
-        <div class="newsItem">
-          <div class="small">{{ n.date | date: "%B %d, %Y" }}</div>
-          <div style="font-weight:800;">
-            <a href="{{ n.url }}">{{ n.title }}</a>
-          </div>
-          {% if n.summary %}
-            <div class="small" style="margin-top:4px;">{{ n.summary }}</div>
-          {% endif %}
+        <div class="home-box">
+          <h3>Research focus</h3>
+          <ul class="quick-list">
+            <li>Phase transitions in oxide materials</li>
+            <li>Electronic structure from DFT and QSGW</li>
+            <li>Optical properties and spectral interpretation</li>
+            <li>Phonon calculations and structural stability</li>
+          </ul>
         </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-</section>
+
+        <div class="home-box">
+          <h3>Tools & methods</h3>
+          <ul class="quick-list">
+            <li>VASP, Ecalj, Quantum ESPRESSO, Phonopy</li>
+            <li>Python: NumPy, Pandas, Matplotlib</li>
+            <li>Linux and HPC workflow development</li>
+            <li>Visualization with VESTA, Jmol, and gnuplot</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>News</h2>
+        <p class="small">Recent updates and milestones</p>
+      </div>
+      <hr class="thin">
+
+      {% assign items = site.news | sort: "date" | reverse %}
+      {% if items.size == 0 %}
+        <p class="small">No news yet. Add files in <code>_news/</code> to update this section automatically.</p>
+      {% else %}
+        <div class="news">
+          {% for n in items limit:5 %}
+            <div class="newsItem">
+              <div class="small">{{ n.date | date: "%B %d, %Y" }}</div>
+              <div class="newsTitle">
+                <a href="{{ n.url }}">{{ n.title }}</a>
+              </div>
+              {% if n.summary %}
+                <div class="newsSummary">{{ n.summary }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
 
   </main>
 
